@@ -18,4 +18,4 @@ EXPOSE 5000
 # If running this app behind a webserver using the uwsgi protocol (like nginx),
 # then use --socket.  Otherwise run with --http to run as a full http server.
 #CMD ["uwsgi", "--http", ":5000",         "--wsgi-file", "odis.py", "--callable", "app", "--processes",  "2", "--threads", "4"]
-CMD ["uwsgi", "--socket", "0.0.0.0:5000", "--wsgi-file", "enla.py", "--callable", "app", "--processes",  "2", "--threads", "4"]
+CMD ["uwsgi", "--socket", "0.0.0.0:5000", "--wsgi-file", "enla.py", "--callable", "app", "--processes",  "2", "--threads", "4", "-b", "65535"]
